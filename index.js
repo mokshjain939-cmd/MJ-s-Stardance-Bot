@@ -48,15 +48,21 @@ ${response.data.punchline}`
     await respond({ text: "Failed to fetch a joke." });
   }
 });
+// Echo command
+app.command("/dsb-echo-mj", async ({ command, ack, respond }) => {
+    await ack();
+    await respond(`You said: ${command.text}`);
+});
 // Help command
-app.command("/dsb-help-mj", async ({ack, respond})=>{
+app.command("/dsb-help-mj", async ({ ack, respond }) => {
     await ack();
     await respond({
         text: "Here are the available commands:\n\n" +
               "1. `/dsb-ping-mj` - Check the bot's latency.\n" +
-              "2. `/dsb-help-mj` - Display this help message.\n" +
+              "2. `/dsb-echo-mj` - Repeat what you say.\n" +
               "3. `/dsb-hello-mj` - Greet the bot.\n" +
               "4. `/dsb-catfact` - Get a random cat fact.\n" +
-              "5. `/dsb-joke` - Get a random joke."
+              "5. `/dsb-joke` - Get a random joke.\n" +
+              "6. `/dsb-help-mj` - Display this help message."
     });
 })
