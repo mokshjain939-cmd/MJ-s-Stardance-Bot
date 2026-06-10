@@ -25,7 +25,7 @@ app.command("/dsb-ping-mj", async ({ command, ack, respond }) => {
   console.log("bot is running!");
 })();
 // Cat fact command
-app.command("/dsb-catfact", async ({ ack, respond }) => {
+app.command("/dsb-catfact-mj", async ({ ack, respond }) => {
   await ack();
   try {
     const response = await axios.get("https://catfact.ninja/fact");
@@ -35,7 +35,7 @@ app.command("/dsb-catfact", async ({ ack, respond }) => {
   }
 });
 // Dog pics command
-app.command("/dsb-dogpic", async ({ ack, respond }) => {
+app.command("/dsb-dogpic-mj", async ({ ack, respond }) => {
   await ack();
   try {
     const response = await axios.get("https://dog.ceo/api/breeds/image/random");
@@ -45,7 +45,7 @@ app.command("/dsb-dogpic", async ({ ack, respond }) => {
   }
 });
 // Cat pics command
-app.command("/dsb-catpic", async ({ ack, respond }) => {
+app.command("/dsb-catpic-mj", async ({ ack, respond }) => {
   await ack();
   try {
     const response = await axios.get("https://api.thecatapi.com/v1/images/search");
@@ -60,7 +60,7 @@ app.command("/dsb-howareyou-mj", async ({ ack, respond }) => {
   await respond("I'm doing great, thanks for asking! How about you?");
 });
 // Joke command
-app.command("/dsb-joke", async ({ ack, respond }) => {
+app.command("/dsb-joke-mj", async ({ ack, respond }) => {
   await ack();
   try {
     const response = await axios.get("https://official-joke-api.appspot.com/random_joke");
@@ -86,11 +86,11 @@ app.command("/dsb-help-mj", async ({ ack, respond }) => {
               "1. `/dsb-ping-mj` - Check the bot's latency.\n" +
               "2. `/dsb-echo-mj` - Repeat what you say.\n" +
               "3. `/dsb-hello-mj` - Greet the bot.\n" +
-              "4. `/dsb-catfact` - Get a random cat fact.\n" +
-              "5. `/dsb-joke` - Get a random joke.\n" +
+              "4. `/dsb-catfact-mj` - Get a random cat fact.\n" +
+              "5. `/dsb-joke-mj` - Get a random joke.\n" +
               "6. `/dsb-help-mj` - Show this help message.\n" +
-              "7. `/dsb-dogpic` - Get a random dog picture.\n" +
-              "8. `/dsb-catpic` - Get a random cat picture.\n" +
+              "7. `/dsb-dogpic-mj` - Get a random dog picture.\n" +
+              "8. `/dsb-catpic-mj` - Get a random cat picture.\n" +
               "9. `/dsb-howareyou-mj` - Ask the bot how it's doing."
     });
 })
