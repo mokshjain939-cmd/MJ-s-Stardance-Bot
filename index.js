@@ -62,7 +62,6 @@ app.command("/dsb-help-mj", async ({ ack, respond }) => {
               "2. `/dsb-echo-mj` - Repeat what you say.\n" +
               "3. `/dsb-hello-mj` - Greet the bot.\n" +
               "4. `/dsb-catfact` - Get a random cat fact.\n" +
-              "5. `/dsb-joke` - Get a random joke.\n" +
-              "6. `/dsb-help-mj` - Display this help message."
+              "5. `/dsb-joke` - Get a random joke.\n"
     });
 })
