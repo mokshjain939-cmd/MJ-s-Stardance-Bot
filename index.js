@@ -111,7 +111,7 @@ app.command("/dsb-echo-mj", async ({ command, ack, respond }) => {
     await respond(`You said: ${command.text}`);
 });
 //NASA Astronomy Picture of the Day command
-app.command("/dsb-NAPD-mj", async ({ ack, respond }) => {
+app.command("/dsb-napd-mj", async ({ ack, respond }) => {
   await ack();
   try {
     const response = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA_API_KEY}`);
