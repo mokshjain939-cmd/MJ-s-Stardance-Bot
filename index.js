@@ -39,7 +39,23 @@ app.command("/dsb-dogpic-mj", async ({ ack, respond }) => {
   await ack();
   try {
     const response = await axios.get("https://dog.ceo/api/breeds/image/random");
-    await respond({ text: `Dog Pic:\n${response.data.message}` });
+    const imageUrl = response.data.message;
+    await respond({
+      blocks: [
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text: imageUrl
+          }
+        },
+        {
+          type: "image",
+          image_url: imageUrl,
+          alt_text: "Random dog"
+        }
+      ]
+    });
   } catch (err) {
     await respond({ text: "Failed to fetch a dog pic." });
   }
@@ -94,6 +110,50 @@ app.command("/dsb-echo-mj", async ({ command, ack, respond }) => {
     await ack();
     await respond(`You said: ${command.text}`);
 });
+//NASA Astronomy Picture of the Day command
+app.command("/dsb-NAPD-mj", async ({ ack, respond }) => {
+  await ack();
+  try {
+    const response = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA_API_KEY}`);
+    await respond({
+      blocks: [
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text: response.data.explanation
+          }
+        },
+        {
+          type: "image",
+          image_url: response.data.url,
+          alt_text: response.data.title
+        }
+      ]
+    });
+  } catch (err) {
+    await respond({ text: "Failed to fetch the Astronomy Picture of the Day." });
+  }
+});
+//meme command
+app.command("/dsb-meme-mj", async ({ ack, respond }) => {
+  await ack();
+  try {
+    const response = await axios.get("https://api.imgflip.com/get_memes");
+    const memeUrl = response.data.data.memes[Math.floor(Math.random() * response.data.data.memes.length)].url;
+    await respond({
+      blocks: [
+        {
+          type: "image",
+          image_url: memeUrl,
+          alt_text: "Random Meme"
+        }
+      ]
+    });
+  } catch (err) {
+    await respond({ text: "Failed to fetch a meme." });
+  }
+});
 // Help command
 app.command("/dsb-help-mj", async ({ ack, respond }) => {
     await ack();
@@ -107,7 +167,9 @@ app.command("/dsb-help-mj", async ({ ack, respond }) => {
               "6. `/dsb-help-mj` - Show this help message.\n" +
               "7. `/dsb-dogpic-mj` - Get a random dog picture.\n" +
               "8. `/dsb-catpic-mj` - Get a random cat picture.\n" +
-              "9. `/dsb-howareyou-mj` - Ask the bot how it's doing." +
+              "9. `/dsb-howareyou-mj` - Ask the bot how it's doing.\n" +
+              "10. `/dsb-NAPD-mj` - View the NASA Astronomy Picture of the Day.\n" +
+              "11. `/dsb-meme-mj` - Get a random meme." +
               "\n\nFeel free to try them out!"
     });
 })
