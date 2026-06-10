@@ -91,6 +91,7 @@ app.command("/dsb-help-mj", async ({ ack, respond }) => {
               "6. `/dsb-help-mj` - Show this help message.\n" +
               "7. `/dsb-dogpic-mj` - Get a random dog picture.\n" +
               "8. `/dsb-catpic-mj` - Get a random cat picture.\n" +
-              "9. `/dsb-howareyou-mj` - Ask the bot how it's doing."
+              "9. `/dsb-howareyou-mj` - Ask the bot how it's doing." +
+              "\n\nFeel free to try them out!"
     });
 })
