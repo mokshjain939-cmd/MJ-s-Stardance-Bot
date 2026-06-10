@@ -168,7 +168,7 @@ app.command("/dsb-help-mj", async ({ ack, respond }) => {
               "7. `/dsb-dogpic-mj` - Get a random dog picture.\n" +
               "8. `/dsb-catpic-mj` - Get a random cat picture.\n" +
               "9. `/dsb-howareyou-mj` - Ask the bot how it's doing.\n" +
-              "10. `/dsb-NAPD-mj` - View the NASA Astronomy Picture of the Day.\n" +
+              "10. `/dsb-napd-mj` - View the NASA Astronomy Picture of the Day.\n" +
               "11. `/dsb-meme-mj` - Get a random meme." +
               "\n\nFeel free to try them out!"
     });
