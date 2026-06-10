@@ -1,5 +1,4 @@
 ## Slack Bot using Slack bot for Javascript
-
 This is a Slack bot built using Slack Bolt for JavaScript and following are the commands currently available, more will be added soon.
 Using/dsb-help-mj in Hack Club Slack channels will give you an overview of the available prompts and commands that one can use with their functions.
 
@@ -23,4 +22,7 @@ Using/dsb-help-mj in Hack Club Slack channels will give you an overview of the a
 - systemd
 - Git & GitHub
 
-The files are available in the repository.  
+The files are available in the repository.
+
+## AI usage
+I used AI to find the Node.js and npm website and to identify the public keys for the NEST application. Other then that my terminal had a default reject foreign applications setting so it gave me some prompts to change those setting and helped me follow the rest of the guide. I also used AI to find how actual images can be placed instead of image urls for catpics, and then I implemented this code url on dogpics, meme and NASA Astronomical Photo of the day
