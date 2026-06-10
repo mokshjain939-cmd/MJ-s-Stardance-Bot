@@ -34,6 +34,31 @@ app.command("/dsb-catfact", async ({ ack, respond }) => {
     await respond({ text: "Failed to fetch a cat fact." });
   }
 });
+// Dog pics command
+app.command("/dsb-dogpic", async ({ ack, respond }) => {
+  await ack();
+  try {
+    const response = await axios.get("https://dog.ceo/api/breeds/image/random");
+    await respond({ text: `Dog Pic:\n${response.data.message}` });
+  } catch (err) {
+    await respond({ text: "Failed to fetch a dog pic." });
+  }
+});
+// Cat pics command
+app.command("/dsb-catpic", async ({ ack, respond }) => {
+  await ack();
+  try {
+    const response = await axios.get("https://api.thecatapi.com/v1/images/search");
+    await respond({ text: `Cat Pic:\n${response.data[0].url}` });
+  } catch (err) {
+    await respond({ text: "Failed to fetch a cat pic." });
+  }
+});
+//How are you command
+app.command("/dsb-howareyou-mj", async ({ ack, respond }) => {
+  await ack();
+  await respond("I'm doing great, thanks for asking! How about you?");
+});
 // Joke command
 app.command("/dsb-joke", async ({ ack, respond }) => {
   await ack();
@@ -63,6 +88,9 @@ app.command("/dsb-help-mj", async ({ ack, respond }) => {
               "3. `/dsb-hello-mj` - Greet the bot.\n" +
               "4. `/dsb-catfact` - Get a random cat fact.\n" +
               "5. `/dsb-joke` - Get a random joke.\n" +
-              "6. `/dsb-help-mj` - Show this help message."
+              "6. `/dsb-help-mj` - Show this help message." +
+              "7. `/dsb-dogpic` - Get a random dog picture." +
+              "8. `/dsb-catpic` - Get a random cat picture." +
+              "9. `/dsb-howareyou-mj` - Ask the bot how it's doing."
     });
 })
