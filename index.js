@@ -49,7 +49,17 @@ app.command("/dsb-catpic-mj", async ({ ack, respond }) => {
   await ack();
   try {
     const response = await axios.get("https://api.thecatapi.com/v1/images/search");
-    await respond({ text: `Cat Pic:\n${response.data[0].url}` });
+    const imageUrl = response.data[0].url;
+    await respond({
+      text: imageUrl,
+      blocks: [
+        {
+          type: "image",
+          image_url: imageUrl,
+          alt_text: "Random cat"
+        }
+      ]
+    });
   } catch (err) {
     await respond({ text: "Failed to fetch a cat pic." });
   }
