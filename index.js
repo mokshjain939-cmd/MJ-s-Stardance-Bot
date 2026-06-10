@@ -51,8 +51,14 @@ app.command("/dsb-catpic-mj", async ({ ack, respond }) => {
     const response = await axios.get("https://api.thecatapi.com/v1/images/search");
     const imageUrl = response.data[0].url;
     await respond({
-      text: imageUrl,
       blocks: [
+        {
+          type: "section",
+          text: {
+          type: "mrkdwn",
+          text: imageUrl
+          }
+        },
         {
           type: "image",
           image_url: imageUrl,
