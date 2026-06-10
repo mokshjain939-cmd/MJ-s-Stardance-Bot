@@ -4,12 +4,17 @@ This is a Slack bot built using Slack Bolt for JavaScript and following are the 
 Using/dsb-help-mj in Hack Club Slack channels will give you an overview of the available prompts and commands that one can use with their functions.
 
 ## Commands
-- /dsb-ping-mj
-- /dsb-hello-mj
-- /dsb-echo-mj
-- /dsb-catfact
-- /dsb-joke
-- /dsb-help-mj
+1. /dsb-ping-mj - Check the bot's latency.
+2. /dsb-echo-mj - Repeat what you say.
+3. /dsb-hello-mj - Greet the bot.
+4. /dsb-catfact-mj - Get a random cat fact.
+5. /dsb-joke-mj - Get a random joke.
+6. /dsb-help-mj - Show this help message.
+7. /dsb-dogpic-mj - Get a random dog picture.
+8. /dsb-catpic-mj - Get a random cat picture.
+9. /dsb-howareyou-mj - Ask the bot how it's doing.
+10. /dsb-napd-mj - View the NASA Astronomy Picture of the Day.
+11. /dsb-meme-mj - Get a random meme.
 
 ## Technologies
 - Node.js
