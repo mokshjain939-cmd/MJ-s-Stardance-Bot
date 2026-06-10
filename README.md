@@ -1,4 +1,4 @@
-## Slack Bot using Slack bot for Javascript
+## Slack Bot using Slack bolt for JavaScript
 This is a Slack bot built using Slack Bolt for JavaScript and following are the commands currently available, more will be added soon.
 Using/dsb-help-mj in Hack Club Slack channels will give you an overview of the available prompts and commands that one can use with their functions.
 
